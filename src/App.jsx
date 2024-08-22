@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <Nav />
-      <div className="w-screen h-dvh border-2 content-center">
-        <div className="w-8/12 grid grid-cols-3 gap-5 mx-auto border-2">
+      <div className="w-screen h-dvh content-center">
+        <div className="w-8/12 grid grid-cols-3 gap-5 mx-auto place-items-center">
           <Card />
           <Card />
           <Card />

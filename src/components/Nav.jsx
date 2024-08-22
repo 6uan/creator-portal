@@ -4,15 +4,28 @@ const Nav = () => {
   return (
     <nav className="fixed top-0 w-screen h-12 bg-[#5C4742]">
       {/* Flex Box for NAV */}
-      <div className="flex w-8/12 mx-auto">
-        <div className="h-12 w-24 font-semibold flex justify-center items-center text-2xl">
-          Artify
+      <div className="flex flex-row w-8/12 mx-auto justify-between overflow-hidden ">
+        <div className="flex justify-center items-center space-x-5">
+          <span className="text-neutral-100 font-semibold text-2xl">
+            Artistfy
+          </span>
+          <form action="search">
+            <input
+              type="text"
+              placeholder="Searching..."
+              className="rounded-sm pl-2 p-0.5 bg-neutral-100"
+            />
+          </form>
         </div>
-        <div>
-          <MdGridView className="h-12 size-8" />
-        </div>
-        <div>
-          <MdAddToPhotos className="h-12 size-7" />
+        <div className="flex text-neutral-100 space-x-5">
+          <div className="flex items-center">
+            <MdGridView className="h-12 size-8 text-[#a5978b]" />
+            <span className="text-xl pl-2">View All</span>
+          </div>
+          <div className="flex items-center">
+            <MdAddToPhotos className="h-12 size-7 text-[#a5978b]" />
+            <span className="text-xl pl-2">Add Artist</span>
+          </div>
         </div>
       </div>
     </nav>
