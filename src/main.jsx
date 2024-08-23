@@ -5,6 +5,8 @@ import "./index.css";
 import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import AddArtist from "./pages/AddArtist.jsx";
 import DisplayAllArtists from "./pages/DisplayAllArtists.jsx";
+import ViewArtist from "./pages/ViewArtist.jsx";
+import EditArtist from "./pages/EditArtist.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,12 @@ const router = createBrowserRouter([
         element: <AddArtist />,
       },
       {
-        path: "view-all",
-        element: <DisplayAllArtists />,
+        path: "/artists/:artist_id",
+        element: <ViewArtist />,
+      },
+      {
+        path: "/edit/:artist_id",
+        element: <EditArtist />,
       },
     ],
   },

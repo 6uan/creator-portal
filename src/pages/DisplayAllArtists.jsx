@@ -31,7 +31,8 @@ const DisplayAllArtists = () => {
           spotify_url={artist.spotify_url}
           apple_url={artist.apple_url}
           genre={artist.genre}
-          description={artist.desc}
+          description={artist.description}
+          artist_id={artist.artist_id}
         />
       ))}
     </div>

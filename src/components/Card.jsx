@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import {
   SiApplemusic,
   SiSpotify,
   SiYoutubemusic,
   SiSoundcloud,
 } from "react-icons/si";
+import { MdEdit } from "react-icons/md";
 
 const Card = ({
   fullName,
@@ -14,18 +16,26 @@ const Card = ({
   image,
   description,
   genre,
+  artist_id,
 }) => {
   return (
-    <div className="rounded-lg min-w-[400px] h-48 flex flex-row justify-left items-center">
+    <div className="rounded-lg w-[460px] h-48 flex flex-row justify-left items-center">
       {/* LEFT DIVISION */}
       <div className="w-48 h-full text-center flex justify-center items-center bg-slate-100 rounded-l-lg text-sm">
-        <div className="size-48 flex justify-center items-center">
-          <img className="rounded-l-md object-contain" src={image} />
+        <div className="rounded-l-md size-48 overflow-hidden flex justify-center items-center">
+          <img className=" object-cover" src={image} />
         </div>
       </div>
       {/* RIGHT DIVISION */}
-      <div className="flex-grow flex-col bg-[#a5978b] rounded-r-md h-full">
-        <h1 className="text-4xl p-2">{fullName} </h1>
+      <div className="relative flex-grow flex-col bg-[#a5978b] rounded-r-md h-full">
+        <div className="absolute right-0 p-2">
+          <Link to={`edit/${artist_id}`}>
+            <MdEdit />
+          </Link>
+        </div>
+        <Link to={`artists/${artist_id}`}>
+          <h1 className="text-4xl p-2">{fullName} </h1>
+        </Link>
         <div className="flex w-full h-10 justify-start items-center gap-2 p-2">
           <div className="relative size-6 flex justify-center items-center bg-black rounded-full">
             <div className="absolute rounded-full size-4 bg-[#a5978b] z-0"></div>
@@ -47,7 +57,7 @@ const Card = ({
           <div class="h-5 w-px bg-black mx-2"></div>
           <h5 className="max-w-40 max-h-7 overflow-hidden">{genre}</h5>
         </div>
-        <p className="font-light p-2">Description {description} </p>
+        <p className="font-light p-2">{description} </p>
       </div>
     </div>
   );

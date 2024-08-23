@@ -1,5 +1,5 @@
-import { MdGridView, MdAddToPhotos } from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import { MdGridView, MdAddToPhotos } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -21,7 +21,7 @@ const Nav = () => {
           </form>
         </div>
         <div className="flex text-neutral-100 space-x-5">
-          <Link to="/view-all">
+          <Link to="/">
             <div className="flex items-center">
               <MdGridView className="h-12 size-8 text-[#a5978b]" />
               <span className="text-xl pl-2">View All</span>
@@ -36,7 +36,7 @@ const Nav = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
