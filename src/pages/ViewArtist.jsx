@@ -69,26 +69,69 @@ const ViewArtist = () => {
           <h1 className="text-4xl p-2">{artist.full_name}</h1>
           {/* Links and Genre */}
           <div className="flex w-full h-10 justify-start items-center gap-2 p-2">
-            <div className="relative size-6 flex justify-center items-center bg-black rounded-full">
+            {/* Apple Music */}
+            <div
+              className={`relative size-6 flex justify-center items-center rounded-full ${
+                artist.apple_url ? "bg-black" : "bg-gray-500"
+              }`}
+            >
               <div className="absolute rounded-full size-4 bg-[#a5978b] z-0"></div>
-              <a href={artist.apple_url} className="absolute">
-                <SiApplemusic className="size-[1.15rem] z-10" />
+              <a
+                href={artist.apple_url || "#"}
+                className={`absolute ${
+                  !artist.apple_url && "pointer-events-none"
+                }`}
+              >
+                <SiApplemusic
+                  className={`size-[1.15rem] z-10 ${
+                    artist.apple_url ? "text-black" : "text-gray-500"
+                  }`}
+                />
               </a>
             </div>
-            <a href={artist.spotify_url}>
-              <SiSpotify className="size-6" />
+
+            {/* Spotify */}
+            <a
+              href={artist.spotify_url || "#"}
+              className={`${!artist.spotify_url && "pointer-events-none"}`}
+            >
+              <SiSpotify
+                className={`size-6 ${
+                  artist.spotify_url ? "text-black" : "text-gray-500"
+                }`}
+              />
             </a>
-            <div className="bg-black rounded-full">
-              <a href={artist.soundcloud_url}>
-                <SiSoundcloud className="size-6 p-0.5 text-[#a5978b]" />
+
+            {/* SoundCloud */}
+            <div
+              className={`rounded-full ${
+                artist.soundcloud_url ? "bg-black" : "bg-gray-500"
+              }`}
+            >
+              <a
+                href={artist.soundcloud_url || "#"}
+                className={`${!artist.soundcloud_url && "pointer-events-none"}`}
+              >
+                <SiSoundcloud className={`size-6 p-0.5 ${"text-[#a5978b]"}`} />
               </a>
             </div>
-            <a href={artist.youtube_url}>
-              <SiYoutubemusic className="size-6" />
+
+            {/* YouTube */}
+            <a
+              href={artist.youtube_url || "#"}
+              className={`${!artist.youtube_url && "pointer-events-none"}`}
+            >
+              <SiYoutubemusic
+                className={`size-6 ${
+                  artist.youtube_url ? "text-black" : "text-gray-500"
+                }`}
+              />
             </a>
+
             <div className="h-5 w-px bg-black mx-2"></div>
             <h5 className="max-w-40 max-h-7 overflow-hidden">{artist.genre}</h5>
           </div>
+
           {/* Description */}
           <p className="font-light p-2">{artist.description}</p>
           {/* Buttons to Edit and Delete */}

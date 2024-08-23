@@ -6,3 +6,17 @@
   background-color: #c4bbaf;
   overflow-x: hidden;
 }
+
+/* Add this to your global CSS file or within a <style> block in your component */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #5c4742;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #3c2f2b;
+}

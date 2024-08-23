@@ -20,7 +20,7 @@ const DisplayAllArtists = () => {
   }, []);
 
   return (
-    <div className="mt-20 w-8/12 grid grid-cols-2 gap-5 mx-auto place-items-center">
+    <div className="my-20 w-8/12 grid grid-cols-2 gap-5 mx-auto place-items-center pb-10">
       {artists.map((artist) => (
         <Card
           fullName={artist.full_name}
